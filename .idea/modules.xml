@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GradleLibraryTest.iml" filepath="$PROJECT_DIR$/GradleLibraryTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/winson-gradle-library/winson-gradle-library.iml" filepath="$PROJECT_DIR$/winson-gradle-library/winson-gradle-library.iml" />
+    </modules>
+  </component>
+</project>

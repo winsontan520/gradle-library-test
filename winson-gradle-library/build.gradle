@@ -98,26 +98,31 @@ artifacts {
     archives sourcesJar
 }
 
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
-bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
+def propertiesFile = project.rootProject.file('local.properties')
+if (propertiesFile.exists()) {
+    Properties properties = new Properties()
+    properties.load(propertiesFile.newDataInputStream())
+    bintray {
+        user = properties.getProperty("bintray.user")
+        key = properties.getProperty("bintray.apikey")
 
-    configurations = ['archives']
+        configurations = ['archives']
 
-    pkg {
-        repo = "maven"
-        name = "winson-gradle-library"
-        websiteUrl = siteUrl
-        vcsUrl = gitUrl
-        licenses = ["Apache-2.0"]
-        publish = true
-        version {
-            name = versionNameForMaven
-            desc = 'winson gradle test library final'
-            vcsTag = versionNameForMaven
+        pkg {
+            repo = "maven"
+            name = "winson-gradle-library"
+            websiteUrl = siteUrl
+            vcsUrl = gitUrl
+            licenses = ["Apache-2.0"]
+            publish = true
+            version {
+                name = versionNameForMaven
+                desc = 'winson gradle test library final'
+                vcsTag = versionNameForMaven
+            }
         }
     }
 }
+
+
 
